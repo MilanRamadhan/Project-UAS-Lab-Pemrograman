@@ -15,7 +15,7 @@ int main() {
     int jumlahBarang = 0; 
 
     
-    char tambahLagi = 'ypir';
+    char tambahLagi = 'y';
     while (tambahLagi == 'y' || tambahLagi == 'y') {
 
         if (jumlahBarang >= MAX_BARANG) {

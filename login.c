@@ -1,14 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-
-#define MAX_USERNAME_LENGTH 20
-#define MAX_PASSWORD_LENGTH 20
-
-struct User {
-    char username[MAX_USERNAME_LENGTH];
-    char password[MAX_PASSWORD_LENGTH];
-};
+#include "header.h"
 
 void registerUser(struct User *users, int *userCount) {
     if (*userCount >= 10) {
@@ -52,43 +45,5 @@ int loginUser(struct User *users, int userCount) {
     }
 
     printf("Login gagal. Username atau password salah.\n");
-    return 0;
-}
-
-int main() {
-    struct User users[10];
-    int userCount = 0;
-    int loggedIn = 0;
-
-    while (!loggedIn) {
-        int choice;
-
-        printf("===== Kasir Sederhana =====\n");
-        printf("1. Registrasi\n");
-        printf("2. Login\n");
-        printf("3. Keluar\n");
-        printf("Pilihan: ");
-        scanf("%d", &choice);
-
-        switch (choice) {
-            case 1:
-                registerUser(users, &userCount);
-                break;
-            case 2:
-                loggedIn = loginUser(users, userCount);
-                break;
-            case 3:
-                printf("Terima kasih. Sampai jumpa!\n");
-                exit(0);
-            default:
-                printf("Pilihan tidak valid.\n");
-                break;
-        }
-
-        printf("\n");
-    }
-
-    // Lanjutkan dengan logika kasir
-
     return 0;
 }

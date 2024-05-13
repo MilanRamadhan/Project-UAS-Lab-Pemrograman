@@ -59,12 +59,3 @@ void tambahJumlahBarang(char *namaBarang, int jumlahBarangAwal) {
     fclose(file);
    
 }
-
-int main() {
-    char namaBarang[MAX_PANJANG_NAMA];
-    int jumlahBarang = 0;
-
-    tambahJumlahBarang(namaBarang, jumlahBarang);
-
-    return 0;
-}

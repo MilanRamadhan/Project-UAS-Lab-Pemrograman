@@ -1,0 +1,4 @@
+Nama Barang: irpantek
+Harga: 1000
+Jumlah: 1
+

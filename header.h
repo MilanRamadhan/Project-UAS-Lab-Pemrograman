@@ -7,3 +7,16 @@ struct User {
 };
 void registerUser(struct User *users, int *userCount);
 int loginUser(struct User *users, int userCount);
+
+#define MAX_BARANG 100
+#define MAX_PANJANG_NAMA 50
+#define NAMA_FILE "barang.txt"
+
+// Struktur data untuk barang
+typedef struct {
+    char namaBarang[MAX_PANJANG_NAMA];
+    int jumlahBarang;
+    int hargaBarang;
+    
+} Barang;
+void tambahJumlahBarang();

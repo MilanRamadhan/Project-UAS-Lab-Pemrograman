@@ -14,6 +14,7 @@ int main() {
         printf("1. Registrasi\n");
         printf("2. Login\n");
         printf("3. Keluar\n");
+        printf("4. tambah barang\n");
         printf("Pilihan: ");
         scanf("%d", &choice);
 
@@ -27,6 +28,9 @@ int main() {
             case 3:
                 printf("Terima kasih. Sampai jumpa!\n");
                 exit(0);
+            case 4:
+                tambahJumlahBarang();
+                break;
             default:
                 printf("Pilihan tidak valid.\n");
                 break;

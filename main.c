@@ -15,6 +15,7 @@ int main() {
         printf("2. Login\n");
         printf("3. Keluar\n");
         printf("4. tambah barang\n");
+        printf("5. melihat daftar barang\n");
         printf("Pilihan: ");
         scanf("%d", &choice);
 
@@ -29,7 +30,10 @@ int main() {
                 printf("Terima kasih. Sampai jumpa!\n");
                 exit(0);
             case 4:
-                tambahJumlahBarang();
+                tambahBarang();
+                break;
+            case 5:
+                tampilkandaftarbarang();
                 break;
             default:
                 printf("Pilihan tidak valid.\n");
@@ -38,8 +42,6 @@ int main() {
 
         printf("\n");
     }
-
-    // Lanjutkan dengan logika kasir
 
     return 0;
 }

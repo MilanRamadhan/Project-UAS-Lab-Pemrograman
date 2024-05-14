@@ -1,4 +1,16 @@
-Nama Barang: irpantek
+Nama Barang: beat
+Harga: 1
+Jumlah: 5000000
+
+Nama Barang: taro
 Harga: 1000
-Jumlah: 1
+Jumlah: 3
+
+Nama Barang: chetos
+Harga: 2000
+Jumlah: 5
+
+Nama Barang: lays
+Harga: 2000
+Jumlah: 7
 

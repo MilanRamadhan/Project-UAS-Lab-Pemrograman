@@ -1,15 +1,7 @@
 #include <stdio.h>
-#include <stdlib.h>
 #include <string.h>
-
-#define MAX_PANJANG_NAMA 100
-#define MAX_BARANG 100
-
-typedef struct {
-    char namaBarang[MAX_PANJANG_NAMA];
-    int hargaBarang;
-    int jumlahBarang;
-} Barang;
+#include "header.h"
+#include <stdlib.h>
 
 void tambahJumlahBarang() {
     FILE *file = fopen("barang.txt", "a");
@@ -18,8 +10,6 @@ void tambahJumlahBarang() {
         exit(1);
     }
 
-    Barang daftarBarang[MAX_BARANG];
-    int jumlahBarang = 0;
     char tambahLagi = 'y';
 
     while (tambahLagi == 'y' || tambahLagi == 'Y') {
@@ -29,7 +19,9 @@ void tambahJumlahBarang() {
         }
 
         printf("\nMasukkan nama barang: ");
-        scanf("%s", daftarBarang[jumlahBarang].namaBarang);
+        fgets(daftarBarang[jumlahBarang].namaBarang, MAX_PANJANG_NAMA, stdin);
+        daftarBarang[jumlahBarang].namaBarang[strcspn(daftarBarang[jumlahBarang].namaBarang, "\n")] = '\0';
+
         printf("Masukkan harga barang: ");
         scanf("%d", &daftarBarang[jumlahBarang].hargaBarang);
         printf("Masukkan jumlah barang: ");

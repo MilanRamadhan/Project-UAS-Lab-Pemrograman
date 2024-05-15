@@ -4,7 +4,7 @@ Jumlah: 5000000
 
 Nama Barang: taro
 Harga: 1000
-Jumlah: 3
+Jumlah: 0
 
 Nama Barang: chetos
 Harga: 2000
@@ -12,5 +12,5 @@ Jumlah: 5
 
 Nama Barang: lays
 Harga: 2000
-Jumlah: 7
+Jumlah: 5
 

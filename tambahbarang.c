@@ -3,13 +3,19 @@
 #include "header.h"
 #include <stdlib.h>
 
-void tambahJumlahBarang() {
+#define MAX_BARANG 100
+#define MAX_PANJANG_NAMA 50
+#define NAMA_FILE "barang.txt"
+
+void tambahBarang() {
     FILE *file = fopen("barang.txt", "a");
     if (file == NULL) {
         printf("Terjadi kesalahan! Gagal membuka file.\n");
         exit(1);
     }
 
+    Barang daftarBarang[MAX_BARANG];
+    int jumlahBarang = 0;
     char tambahLagi = 'y';
 
     while (tambahLagi == 'y' || tambahLagi == 'Y') {

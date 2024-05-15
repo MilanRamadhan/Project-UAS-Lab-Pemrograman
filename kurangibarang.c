@@ -8,13 +8,18 @@
 
 // Fungsi untuk mengurangi barang
 void kurangiJumlahBarang(char *namaBarang, int jumlahBarang) {
+    printf("Nama Barang yang ingin dikurangi: ");
+    scanf("%s", namaBarang);
+    printf("Jumlah Barang yang ingin dikurangi: ");
+    scanf("%d", &jumlahBarang);
+
     FILE *file = fopen(NAMA_FILE, "r");
     if (file == NULL) {
         printf("Terjadi kesalahan! Gagal membuka file.\n");
         exit(1);
     }
 
-    FILE *tempFile = fopen("temp.txt", "a");
+    FILE *tempFile = fopen("temp.txt", "w");
     if (tempFile == NULL) {
         printf("Terjadi kesalahan! Gagal membuka file.\n");
         fclose(file);
@@ -38,9 +43,9 @@ void kurangiJumlahBarang(char *namaBarang, int jumlahBarang) {
                 printf("Jumlah stok %s tidak cukup.\n", namaBarang);
                 fprintf(tempFile, "Nama Barang: %s\nHarga: %d\nJumlah: %d\n\n", namaBarangFile, hargaBarangFile, jumlahBarangFile);
             }
-        } else {
-            fprintf(tempFile, "Nama Barang: %s\nHarga: %d\nJumlah: %d\n\n", namaBarangFile, hargaBarangFile, jumlahBarangFile);
-        }
+            } else {
+                fprintf(tempFile, "Nama Barang: %s\nHarga: %d\nJumlah: %d\n\n", namaBarangFile, hargaBarangFile, jumlahBarangFile);
+            }
     }
 
     if (!found) {
@@ -52,5 +57,4 @@ void kurangiJumlahBarang(char *namaBarang, int jumlahBarang) {
     remove(NAMA_FILE);
     rename("temp.txt", NAMA_FILE);
 
-    return 0;
 }

@@ -1,15 +1,10 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include "header.h"
 
 #define MAX_PANJANG_NAMA 50
 #define NAMA_FILE "barang.txt"
-
-typedef struct {
-    char namaBarang[MAX_PANJANG_NAMA];
-    int jumlahBarang;
-    int hargaBarang;
-} Barang;
 
 int pembelianBarang(char *namaBarang, int jumlahBarang) {
     FILE *file = fopen(NAMA_FILE, "r");
@@ -113,9 +108,4 @@ void pembayaran() {
         }   
     }
 
-}
-
-int main() {
-    pembayaran();
-    return 0;
 }

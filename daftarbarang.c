@@ -1,42 +1,42 @@
-#include "header.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include "header.h"
 
-void bacaDataBarang() {
-    FILE *file = fopen("barang.txt", "r");
+#define MAKS_BARANG 100
+#define MAKS_PANJANG_NAMA 50
+#define NAMA_FILE "barang.txt"
+
+// Fungsi untuk menampilkan daftar barang
+void tampilkandaftarbarang() {
+    FILE *file = fopen(NAMA_FILE, "r");
     if (file == NULL) {
-        printf("Gagal membuka file.\n");
+        printf("Terjadi kesalahan! Gagal membuka file.\n");
         return;
     }
 
-    char line[100];
-    while (fgets(line, sizeof(line), file)) {
-        char *nama = strtok(line, ":");
-        char *harga = strtok(NULL, ":");
-        char *jumlah = strtok(NULL, ":");
+    Barang daftarBarang[MAKS_BARANG];
+    int jumlahBarang = 0;
+    char buffer[256];
 
-        if (nama != NULL && harga != NULL && jumlah != NULL) {
-            strcpy(daftarBarang[jumlahBarang].namaBarang, nama);
-            daftarBarang[jumlahBarang].hargaBarang = atof(harga);
-            daftarBarang[jumlahBarang].jumlahBarang = atoi(jumlah);
+    printf("\nDaftar Barang:\n");
+    printf("-------------------------------------------------\n");
+    printf("  Nama Barang        Harga       Jumlah\n");
+    printf("-------------------------------------------------\n");
 
+    while (fgets(buffer, sizeof(buffer), file) != NULL) {
+        if (strncmp(buffer, "Nama Barang:", 12) == 0) {
+            sscanf(buffer, "Nama Barang: %s", daftarBarang[jumlahBarang].namaBarang);
+            fgets(buffer, sizeof(buffer), file); // Baca "Harga:"
+            sscanf(buffer, "Harga: %d", &daftarBarang[jumlahBarang].hargaBarang);
+            fgets(buffer, sizeof(buffer), file); // Baca "Jumlah:"
+            sscanf(buffer, "Jumlah: %d", &daftarBarang[jumlahBarang].jumlahBarang);
+            printf("  %-20s %-10d %-10d\n", daftarBarang[jumlahBarang].namaBarang, daftarBarang[jumlahBarang].hargaBarang, daftarBarang[jumlahBarang].jumlahBarang);
             jumlahBarang++;
+            fgets(buffer, sizeof(buffer), file); // Baca baris kosong
         }
     }
 
+    printf("-------------------------------------------------\n");
     fclose(file);
-}
-
-void tampilkanDaftarBarang() {
-    printf("Daftar Barang:\n");
-    printf("-------------\n");
-    printf("No.  Nama Barang              Stok    Harga\n");
-    printf("-----------------------------------------\n");
-
-    for (int i = 0; i < jumlahBarang; i++) {
-        printf("%-4d %-24s %-8d %.2f\n", i + 1, daftarBarang[i].namaBarang, daftarBarang[i].jumlahBarang, daftarBarang[i].hargaBarang);
-    }
-
-    printf("-----------------------------------------\n");
 }

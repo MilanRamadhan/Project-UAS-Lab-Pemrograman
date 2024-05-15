@@ -41,3 +41,14 @@ void tambahJumlahBarang();
 void tampilkanDaftarBarang();
 void bacadaftarBarang();
 void bacadatabarang();
+
+#define MAX_PANJANG_NAMA 50
+#define NAMA_FILE "barang.txt"
+
+void kurangiJumlahBarang(char *namaBarang, int jumlahBarang);
+char namaBarangFile[MAX_PANJANG_NAMA];
+    int jumlahBarangFile;
+    int hargaBarangFile;
+    int found = 0;
+char namaBarang[MAX_PANJANG_NAMA];
+    int jumlahBarang;

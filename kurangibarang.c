@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include "header.h"
 
 #define MAX_PANJANG_NAMA 50
 #define NAMA_FILE "barang.txt"
@@ -50,18 +51,6 @@ void kurangiJumlahBarang(char *namaBarang, int jumlahBarang) {
     fclose(tempFile);
     remove(NAMA_FILE);
     rename("temp.txt", NAMA_FILE);
-}
-
-int main() {
-    char namaBarang[MAX_PANJANG_NAMA];
-    int jumlahBarang;
-
-    printf("Nama Barang yang ingin dikurangi: ");
-    scanf("%s", namaBarang);
-    printf("Jumlah Barang yang ingin dikurangi: ");
-    scanf("%d", &jumlahBarang);
-
-    kurangiJumlahBarang(namaBarang, jumlahBarang);
 
     return 0;
 }

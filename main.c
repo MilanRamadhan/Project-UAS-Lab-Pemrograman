@@ -16,6 +16,7 @@ int main() {
         printf("3. Keluar\n");
         printf("4. tambah barang\n");
         printf("5. melihat daftar barang\n");
+        printf("6. kurangi daftar barang\n");
         printf("Pilihan: ");
         scanf("%d", &choice);
 
@@ -34,6 +35,16 @@ int main() {
                 break;
             case 5:
                 tampilkandaftarbarang();
+                break;
+            case 6:
+                kurangiJumlahBarang();
+                printf("Nama Barang yang ingin dikurangi: ");
+                scanf("%s", namaBarang);
+                printf("Jumlah Barang yang ingin dikurangi: ");
+                scanf("%d", &jumlahBarang);
+
+                kurangiJumlahBarang(namaBarang, jumlahBarang);
+
                 break;
             default:
                 printf("Pilihan tidak valid.\n");

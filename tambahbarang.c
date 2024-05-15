@@ -25,13 +25,23 @@ void tambahBarang() {
         }
 
         printf("\nMasukkan nama barang: ");
-        fgets(daftarBarang[jumlahBarang].namaBarang, MAX_PANJANG_NAMA, stdin);
+        if (fgets(daftarBarang[jumlahBarang].namaBarang, MAX_PANJANG_NAMA, stdin) == NULL) {
+            printf("Terjadi kesalahan saat membaca input.\n");
+            break;
+        }
         daftarBarang[jumlahBarang].namaBarang[strcspn(daftarBarang[jumlahBarang].namaBarang, "\n")] = '\0';
 
         printf("Masukkan harga barang: ");
-        scanf("%d", &daftarBarang[jumlahBarang].hargaBarang);
+        if (scanf("%d", &daftarBarang[jumlahBarang].hargaBarang) != 1) {
+            printf("Terjadi kesalahan saat membaca input harga.\n");
+            break;
+        }
+
         printf("Masukkan jumlah barang: ");
-        scanf("%d", &daftarBarang[jumlahBarang].jumlahBarang);
+        if (scanf("%d", &daftarBarang[jumlahBarang].jumlahBarang) != 1) {
+            printf("Terjadi kesalahan saat membaca input jumlah.\n");
+            break;
+        }
 
         fprintf(file, "Nama Barang: %s\nHarga: %d\nJumlah: %d\n\n", daftarBarang[jumlahBarang].namaBarang,
                 daftarBarang[jumlahBarang].hargaBarang, daftarBarang[jumlahBarang].jumlahBarang);

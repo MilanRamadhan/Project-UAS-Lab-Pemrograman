@@ -3,10 +3,6 @@
 #define MAX_BARANG 100
 #define MAX_PANJANG_NAMA 50
 #define NAMA_FILE "barang.txt"
-#define MAX_PANJANG_NAMA 50
-#define NAMA_FILE "barang.txt"
-#define MAX_PANJANG_NAMA 50
-#define NAMA_FILE "barang.txt"
 
 struct User {
     char username[MAX_USERNAME_LENGTH];
@@ -27,8 +23,7 @@ void tambahBarang();
 void tambahJumlahBarang();
 void tampilkandaftarbarang();
 void bacadaftarBarang();
-void bacadatabarang();
-void kurangiJumlahBarang(char *namaBarang, int jumlahBarang);
+void kurangiJumlahBarang();
 char namaBarangFile[MAX_PANJANG_NAMA];
 char namaBarang[MAX_PANJANG_NAMA];
 

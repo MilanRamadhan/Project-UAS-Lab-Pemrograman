@@ -1,16 +1,24 @@
-Nama Barang: beat
-Harga: 1
-Jumlah: 5000000
+Nama Barang: chitato
+Harga: 5000
+Jumlah: 45
 
 Nama Barang: taro
 Harga: 1000
-Jumlah: 0
+Jumlah: 25
 
 Nama Barang: chetos
 Harga: 2000
-Jumlah: 5
+Jumlah: 20
 
 Nama Barang: lays
 Harga: 2000
-Jumlah: 5
+Jumlah: 10
+
+Nama Barang: pringles
+Harga: 10000
+Jumlah: 30
+
+Nama Barang: doritos
+Harga: 12000
+Jumlah: 35
 

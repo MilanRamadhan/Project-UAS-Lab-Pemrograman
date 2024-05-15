@@ -1,19 +1,21 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include "header.h"
 
 #define MAX_PANJANG_NAMA 50
 #define NAMA_FILE "barang.txt"
 
 // Fungsi untuk mengurangi barang
-void kurangiJumlahBarang(char *namaBarang, int jumlahBarang) {
+void kurangiJumlahBarang() {
+    char namaBarang[MAX_PANJANG_NAMA];
+    int jumlahBarang;
+
     printf("Nama Barang yang ingin dikurangi: ");
     scanf("%s", namaBarang);
     printf("Jumlah Barang yang ingin dikurangi: ");
     scanf("%d", &jumlahBarang);
 
-    FILE *file = fopen(NAMA_FILE, "r");
+    FILE *file = fopen(NAMA_FILE, "r+");
     if (file == NULL) {
         printf("Terjadi kesalahan! Gagal membuka file.\n");
         exit(1);
@@ -43,9 +45,9 @@ void kurangiJumlahBarang(char *namaBarang, int jumlahBarang) {
                 printf("Jumlah stok %s tidak cukup.\n", namaBarang);
                 fprintf(tempFile, "Nama Barang: %s\nHarga: %d\nJumlah: %d\n\n", namaBarangFile, hargaBarangFile, jumlahBarangFile);
             }
-            } else {
-                fprintf(tempFile, "Nama Barang: %s\nHarga: %d\nJumlah: %d\n\n", namaBarangFile, hargaBarangFile, jumlahBarangFile);
-            }
+        } else {
+            fprintf(tempFile, "Nama Barang: %s\nHarga: %d\nJumlah: %d\n\n", namaBarangFile, hargaBarangFile, jumlahBarangFile);
+        }
     }
 
     if (!found) {
@@ -56,5 +58,4 @@ void kurangiJumlahBarang(char *namaBarang, int jumlahBarang) {
     fclose(tempFile);
     remove(NAMA_FILE);
     rename("temp.txt", NAMA_FILE);
-
 }

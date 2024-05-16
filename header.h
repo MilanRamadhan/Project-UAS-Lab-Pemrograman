@@ -19,7 +19,7 @@ int pembelianBarang(char *namaBarang, int jumlahBarang);
 void pembayaran();
 void registerUser(struct User *users, int *userCount);
 int loginUser(struct User *users, int userCount);
-void tambahBarang();
+void tambahbarang();
 void tambahJumlahBarang();
 void tampilkandaftarbarang();
 void bacadaftarBarang();

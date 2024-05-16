@@ -7,7 +7,7 @@
 #define MAX_PANJANG_NAMA 50
 #define NAMA_FILE "barang.txt"
 
-void tambahBarang() {
+void tambahbarang() {
     FILE *file = fopen("barang.txt", "a");
     if (file == NULL) {
         printf("Terjadi kesalahan! Gagal membuka file.\n");
@@ -24,20 +24,21 @@ void tambahBarang() {
             break;
         }
 
-        printf("\nMasukkan nama barang: ");
+        printf("\nMasukkan nama barang: \n");
+        getchar();
         if (fgets(daftarBarang[jumlahBarang].namaBarang, MAX_PANJANG_NAMA, stdin) == NULL) {
             printf("Terjadi kesalahan saat membaca input.\n");
             break;
         }
         daftarBarang[jumlahBarang].namaBarang[strcspn(daftarBarang[jumlahBarang].namaBarang, "\n")] = '\0';
 
-        printf("Masukkan harga barang: ");
+        printf("Masukkan harga barang: \n");
         if (scanf("%d", &daftarBarang[jumlahBarang].hargaBarang) != 1) {
             printf("Terjadi kesalahan saat membaca input harga.\n");
             break;
         }
 
-        printf("Masukkan jumlah barang: ");
+        printf("Masukkan jumlah barang: \n");
         if (scanf("%d", &daftarBarang[jumlahBarang].jumlahBarang) != 1) {
             printf("Terjadi kesalahan saat membaca input jumlah.\n");
             break;

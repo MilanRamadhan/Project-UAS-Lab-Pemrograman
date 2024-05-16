@@ -22,3 +22,7 @@ Nama Barang: doritos
 Harga: 12000
 Jumlah: 35
 
+Nama Barang: qtela
+Harga: 2500
+Jumlah: 20
+

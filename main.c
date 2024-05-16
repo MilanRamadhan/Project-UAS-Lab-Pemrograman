@@ -49,7 +49,7 @@ int main() {
 
             switch (choice) {
                 case 1:
-                    tambahBarang();
+                    tambahbarang();
                     break;
                 case 2:
                     tampilkandaftarbarang();
